@@ -1,0 +1,7 @@
+# See 
+# dependencies
+/**/*.tfvars
+/**/.terraform*
+/**/aws_configure.txt
+terraform.tfstate
+terraform.tfstate.backup
