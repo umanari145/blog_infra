@@ -24,6 +24,10 @@ variable "secret_key" {
   type        = string
 }
 
+variable "doc_db_protocol" {
+  description = "doc_db_protocol"
+  type        = string
+}
 
 variable "doc_db_user" {
   description = "doc_db_user"
@@ -32,6 +36,11 @@ variable "doc_db_user" {
 
 variable "doc_db_pass" {
   description = "doc_db_pass"
+  type        = string
+}
+
+variable "doc_db_host" {
+  description = "doc_db_host"
   type        = string
 }
 

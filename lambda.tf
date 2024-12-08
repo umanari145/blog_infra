@@ -10,8 +10,10 @@ resource "aws_lambda_function" "blog_lambda" {
   role = aws_iam_role.lambda_exec_role.arn
   environment {
     variables = {
-      DOC_DB_USER = var.doc_db_user
+      DOC_DB_PROTOCOL = var.doc_db_protocol
       DOC_DB_PASS = var.doc_db_pass
+      DOC_DB_USER = var.doc_db_user
+      DOC_DB_HOST = var.doc_db_host
 		}
 	}
 }

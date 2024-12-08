@@ -1,4 +1,4 @@
-# blog
+# blog_infra
 
 [blog](https://github.com/umanari145/blog)のinfraを切り出し
 
