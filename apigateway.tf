@@ -23,6 +23,12 @@ resource "aws_api_gateway_resource" "api_3" {
   path_part   = "{post_no}"
 }
 
+resource "aws_api_gateway_resource" "api_4" {
+  rest_api_id = aws_api_gateway_rest_api.blog_api.id
+  parent_id   = aws_api_gateway_resource.api_1.id
+  path_part   = "menus"
+}
+
 
 
 resource "aws_api_gateway_method" "api_2_get" {
@@ -35,6 +41,13 @@ resource "aws_api_gateway_method" "api_2_get" {
 resource "aws_api_gateway_method" "api_3_get" {
   rest_api_id   = aws_api_gateway_rest_api.blog_api.id
   resource_id   = aws_api_gateway_resource.api_3.id
+  http_method   = "GET"
+  authorization = "NONE"
+}
+
+resource "aws_api_gateway_method" "api_4_get" {
+  rest_api_id   = aws_api_gateway_rest_api.blog_api.id
+  resource_id   = aws_api_gateway_resource.api_4.id
   http_method   = "GET"
   authorization = "NONE"
 }
@@ -54,6 +67,15 @@ resource "aws_api_gateway_integration" "api_3_get" {
   rest_api_id             = aws_api_gateway_rest_api.blog_api.id
   resource_id             = aws_api_gateway_resource.api_3.id
   http_method             = aws_api_gateway_method.api_3_get.http_method
+  integration_http_method = "POST"
+  type                    = "AWS_PROXY"
+  uri                     = aws_lambda_function.blog_lambda.invoke_arn
+}
+
+resource "aws_api_gateway_integration" "api_4_get" {
+  rest_api_id             = aws_api_gateway_rest_api.blog_api.id
+  resource_id             = aws_api_gateway_resource.api_4.id
+  http_method             = aws_api_gateway_method.api_4_get.http_method
   integration_http_method = "POST"
   type                    = "AWS_PROXY"
   uri                     = aws_lambda_function.blog_lambda.invoke_arn

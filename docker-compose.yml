@@ -2,6 +2,9 @@ version: "3"
 services:
   python:
     container_name: "blog_generator"
+    build:
+      context: "./"
+      dockerfile: "Dockerfile"
     volumes:
       - ./:/app
     tty: true
