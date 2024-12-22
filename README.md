@@ -16,6 +16,11 @@
 - variables.tf・・terraform内で使う変数の定義
 - aws_configure.txt.default・・awsの設定情報。ecr_build.shで使用(.defautがない方の拡張子が実施の値)
 
+### 環境変数読み込み
+```
+source aws_configure.txt
+```
+
 #### 実際の構築コマンド
 
 1. `bash ecr_build`
@@ -65,3 +70,22 @@ https://zenn.dev/yumainaura/articles/qiita-2023-09-15t13_31_48-09_00
 ### cloudflount
 https://hisuiblog.com/react-terraform-cloudfront-s3-deploy/<br>
 https://github.com/hisuihisui/terraform_aws_deploy_practice
+
+### acm
+https://dev.classmethod.jp/articles/terraform-aws-certificate-validation/<br>
+https://qiita.com/Ogin0pan/items/199986966e541d9e9ba4<br>
+https://qiita.com/kanadeee/items/752e20af5b071ef0e011<br>
+https://qiita.com/aokabin/items/b03850c450d50abed952<br>
+https://qiita.com/kanadeee/items/e6d06d36b2d0b97c33a8<br>
+https://qiita.com/kekkepy/items/8f5aeb26985a9cea39dd<br>
+https://qiita.com/tos-miyake/items/f0e5f28f2a69e4d39422
+
+### ネームサーバー設定変更
+```
+nslookup -type=NS skill-up-engineering.com
+
+Non-authoritative answer:
+skill-up-engineering.com        nameserver = xxxxxx.com.
+skill-up-engineering.com        nameserver = xxxxxx.com.
+# 上記のnameserverがNSレコードのネームサーバーになっていることを確認
+```

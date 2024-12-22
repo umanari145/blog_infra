@@ -13,6 +13,10 @@ variable "domain_name" {
   type        = string
 }
 
+variable "full_domain_name" {
+  description = "full_domain_name"
+  type        = string
+}
 
 variable "access_key" {
   description = "access_key"
