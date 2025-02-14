@@ -89,3 +89,16 @@ skill-up-engineering.com        nameserver = xxxxxx.com.
 skill-up-engineering.com        nameserver = xxxxxx.com.
 # 上記のnameserverがNSレコードのネームサーバーになっていることを確認
 ```
+
+## api_gateway
+
+https://blog.linkode.co.jp/entry/2023/09/15/120000<br>
+https://zenn.dev/fdnsy/articles/86897abce0bbf5
+
+デプロイコマンドは下記で
+```
+aws apigateway create-deployment \
+  --rest-api-id [api_id] \
+  --stage-name [stage dev/stg/prodなど] \
+  --description "[message]"
+```
