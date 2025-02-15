@@ -95,12 +95,23 @@ skill-up-engineering.com        nameserver = xxxxxx.com.
 https://blog.linkode.co.jp/entry/2023/09/15/120000<br>
 https://zenn.dev/fdnsy/articles/86897abce0bbf5
 
+
 デプロイコマンドは下記で
+
+1.デプロイメント作成
 ```
 aws apigateway create-deployment \
   --rest-api-id [api_id] \
   --stage-name [stage dev/stg/prodなど] \
   --description "[message]"
+```
+
+2.ステージの作成
+```
+aws apigateway create-stage \
+  --rest-api-id $API_ID \
+  --stage-name [stage] 
+  --deployment-id [deployment_id]
 ```
 
 ### ファイル単位のシェル
