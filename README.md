@@ -4,12 +4,12 @@
 
 ### infra
 - api_paths.xlsx・・APIGatewayのパス情報をここから展開
-- apigateway.tf・・APIGatewayのtfファイル
+- apigateway2.tf・・APIGatewayのtfファイル
 - ecr_build.sh・・ECRの構築とイメージのpush。`bash ecr_builds.sh`でECR作成とコンテナイメージのpush
-- generator.py・・apigateway.tfを作成するためのツール　コンテナ内で以下コマンドで`cd /app/infra && python generator.py`でtfファイル作成
+- generator2.py・・apigateway.tfを作成するためのツール　コンテナ内で以下コマンドで`cd /app/infra && python generator.py`でtfファイル作成
 - lambda.tf・・lambdaのtfファイル
 - provider.tf・・providerの設定ファイル
-- template.tf.j2・・generatorのtemplate。ここをgeneratorはここを経由してtfファイルを作成する
+- template2.tf.j2・・generatorのtemplate。ここをgeneratorはここを経由してtfファイルを作成する
 - terraform.tfstate・・terraformの状態 
 - terraform.tfstate.backup・・terraformの状態(backup)
 - terraform.tfvars.dummy・・terraformの変数(dummyがない方の拡張子が実際の値)

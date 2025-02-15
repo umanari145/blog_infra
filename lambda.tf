@@ -49,15 +49,6 @@ resource "aws_cloudwatch_log_group" "log_group" {
   retention_in_days = 30
 }
 
-# Lambda permission for API Gateway to invoke
-resource "aws_lambda_permission" "api_gateway_invoke" {
-  statement_id  = "AllowExecutionFromApiGateway"
-  action        = "lambda:InvokeFunction"
-  function_name = aws_lambda_function.blog_lambda.function_name
-  principal     = "apigateway.amazonaws.com"
-  source_arn    = "${aws_api_gateway_rest_api.blog_api.execution_arn}/*/*"
-}
-
 resource "aws_lambda_permission" "api_gateway_invoke_blog2" {
   statement_id  = "AllowExecutionFromApiGateway2"
   action        = "lambda:InvokeFunction"
