@@ -43,6 +43,9 @@ terraform apply -var-file terraform.tfvars
 terraform destroy -var-file terraform.tfvars
 ```
 
+### jinja構文
+https://qiita.com/simonritchie/items/cc2021ac6860e92de25d
+
 ### lambda & ecr terraform
  
 https://zenn.dev/ikedam/articles/4d0646c8effb1c
@@ -93,8 +96,8 @@ skill-up-engineering.com        nameserver = xxxxxx.com.
 ## api_gateway
 
 https://blog.linkode.co.jp/entry/2023/09/15/120000<br>
-https://zenn.dev/fdnsy/articles/86897abce0bbf5
-
+https://zenn.dev/fdnsy/articles/86897abce0bbf5<br>
+https://qiita.com/sabmeua/items/c686dbc24ab23fb68187
 
 デプロイコマンドは下記で
 

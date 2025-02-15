@@ -30,7 +30,7 @@ for row in method_sheet.iter_rows(min_row=2, values_only=True):
 # Jinjaテンプレートの設定
 env = Environment(loader=FileSystemLoader('.'))
 template = env.get_template('template2.tf.j2')
-
+print(methods)
 # Terraformソースの生成
 output = template.render(
     api_name=api_name,
