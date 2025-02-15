@@ -13,19 +13,19 @@ resource "aws_api_gateway_resource" "res_1" {
 
 resource "aws_api_gateway_resource" "res_2" {
   rest_api_id = aws_api_gateway_rest_api.blog_api2.id
-  parent_id   = aws_api_gateway_rest_api.blog_api2.root_resource_id
+  parent_id   = aws_api_gateway_resource.res_1.id
   path_part   = "blogs"
 }
 
 resource "aws_api_gateway_resource" "res_3" {
   rest_api_id = aws_api_gateway_rest_api.blog_api2.id
-  parent_id   = aws_api_gateway_rest_api.blog_api2.root_resource_id
+  parent_id   = aws_api_gateway_resource.res_2.id
   path_part   = "{post_no}"
 }
 
 resource "aws_api_gateway_resource" "res_4" {
   rest_api_id = aws_api_gateway_rest_api.blog_api2.id
-  parent_id   = aws_api_gateway_rest_api.blog_api2.root_resource_id
+  parent_id   = aws_api_gateway_resource.res_1.id
   path_part   = "menus"
 }
 

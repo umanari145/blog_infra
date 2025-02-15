@@ -65,7 +65,6 @@ integrations['method_name'] = integrations.apply(lambda row: "{}_{}".format(row[
 # Jinja2テンプレートの読み込み
 env = Environment(loader=FileSystemLoader('.'))
 template = env.get_template(template_file_path)
-
 # テンプレートにリソースとメソッドのデータを渡してレンダリング
 terraform_code = template.render(
     api_name=api_name,

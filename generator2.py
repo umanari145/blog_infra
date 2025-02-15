@@ -19,7 +19,8 @@ for row in resource_sheet.iter_rows(min_row=2, values_only=True):
         'id': row[0],
         'path': path_parts[-1],
         'full_path': row[1],
-        'parent_path': parent_path if parent_path else None
+        'parent_path': parent_path if parent_path else None,
+        'parent_id': resources[parent_path]['id'] if parent_path else None
     }
     resources[row[1]] = resource
 

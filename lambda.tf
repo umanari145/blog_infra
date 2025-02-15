@@ -58,3 +58,11 @@ resource "aws_lambda_permission" "api_gateway_invoke" {
   source_arn    = "${aws_api_gateway_rest_api.blog_api.execution_arn}/*/*"
 }
 
+resource "aws_lambda_permission" "api_gateway_invoke_blog2" {
+  statement_id  = "AllowExecutionFromApiGateway2"
+  action        = "lambda:InvokeFunction"
+  function_name = aws_lambda_function.blog_lambda.function_name
+  principal     = "apigateway.amazonaws.com"
+  source_arn    = "${aws_api_gateway_rest_api.blog_api2.execution_arn}/*/*"
+}
+
