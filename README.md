@@ -102,3 +102,15 @@ aws apigateway create-deployment \
   --stage-name [stage dev/stg/prodなど] \
   --description "[message]"
 ```
+
+### ファイル単位のシェル
+`bash terraform_agent.sh ******.tf`
+
+```
+Choose action:
+1) Apply
+2) Destroy
+```
+1,2以外はexit
+
+echo文を貼り付けてそのまま実行

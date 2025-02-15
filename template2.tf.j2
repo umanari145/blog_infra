@@ -61,5 +61,12 @@ resource "aws_api_gateway_integration_response" "method_{{ method.id }}_integrat
   response_templates = {
     "application/json" = ""
   }
+
+  depends_on = [
+    aws_api_gateway_resource.res_{{ method.resource_id }},
+    aws_api_gateway_method.method_{{ method.id }},
+    aws_api_gateway_method_response.method_{{ method.id }}_response,
+    aws_api_gateway_integration.method_{{ method.id }}_integration
+  ]
 }
 {% endfor %}

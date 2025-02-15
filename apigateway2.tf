@@ -75,6 +75,13 @@ resource "aws_api_gateway_integration_response" "method_1_integration_response" 
   response_templates = {
     "application/json" = ""
   }
+
+  depends_on = [
+    aws_api_gateway_resource.res_2,
+    aws_api_gateway_method.method_1,
+    aws_api_gateway_method_response.method_1_response,
+    aws_api_gateway_integration.method_1_integration
+  ]
 }
 
 resource "aws_api_gateway_method" "method_2" {
@@ -121,6 +128,13 @@ resource "aws_api_gateway_integration_response" "method_2_integration_response" 
   response_templates = {
     "application/json" = ""
   }
+
+  depends_on = [
+    aws_api_gateway_resource.res_2,
+    aws_api_gateway_method.method_2,
+    aws_api_gateway_method_response.method_2_response,
+    aws_api_gateway_integration.method_2_integration
+  ]
 }
 
 resource "aws_api_gateway_method" "method_3" {
@@ -167,6 +181,13 @@ resource "aws_api_gateway_integration_response" "method_3_integration_response" 
   response_templates = {
     "application/json" = ""
   }
+
+  depends_on = [
+    aws_api_gateway_resource.res_3,
+    aws_api_gateway_method.method_3,
+    aws_api_gateway_method_response.method_3_response,
+    aws_api_gateway_integration.method_3_integration
+  ]
 }
 
 resource "aws_api_gateway_method" "method_4" {
@@ -213,6 +234,13 @@ resource "aws_api_gateway_integration_response" "method_4_integration_response" 
   response_templates = {
     "application/json" = ""
   }
+
+  depends_on = [
+    aws_api_gateway_resource.res_3,
+    aws_api_gateway_method.method_4,
+    aws_api_gateway_method_response.method_4_response,
+    aws_api_gateway_integration.method_4_integration
+  ]
 }
 
 resource "aws_api_gateway_method" "method_5" {
@@ -259,4 +287,11 @@ resource "aws_api_gateway_integration_response" "method_5_integration_response" 
   response_templates = {
     "application/json" = ""
   }
+
+  depends_on = [
+    aws_api_gateway_resource.res_4,
+    aws_api_gateway_method.method_5,
+    aws_api_gateway_method_response.method_5_response,
+    aws_api_gateway_integration.method_5_integration
+  ]
 }

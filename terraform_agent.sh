@@ -35,11 +35,11 @@ read -p "Enter choice (1 or 2): " choice
 case $choice in
     1)
         echo "Running terraform apply..."
-        terraform apply -target={$TF_ARGS}
+        echo "terraform apply -target={$TF_ARGS}"
         ;;
     2)
         echo "Running terraform destroy..."
-        terraform destroy -target={$TF_ARGS}
+        echo "terraform destroy -target={$TF_ARGS}"
         ;;
     *)
         echo "Invalid choice! Exiting."
