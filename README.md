@@ -71,10 +71,11 @@ terraform import aws_cloudwatch_log_group.log_group :/aws/lambda/blogLambdaFunct
 https://zenn.dev/yumainaura/articles/qiita-2023-09-15t13_31_48-09_00
 
 ### cloudflount
-https://hisuiblog.com/react-terraform-cloudfront-s3-deploy/<br>
+高速な静的・動的コンテンツの配信（例: HTML、CSS、JavaScript、画像、動画など）
 https://github.com/hisuihisui/terraform_aws_deploy_practice
 
 ### acm
+AWSが提供するSSL/TLS証明書の発行・管理サービス<br>
 https://dev.classmethod.jp/articles/terraform-aws-certificate-validation/<br>
 https://qiita.com/Ogin0pan/items/199986966e541d9e9ba4<br>
 https://qiita.com/kanadeee/items/752e20af5b071ef0e011<br>
